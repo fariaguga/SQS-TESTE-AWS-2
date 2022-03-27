@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000
 // app.use(express.json());
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => res.send(`<h1> Executando na porta: ${port} </h1>`));
+// app.get('/', (req, res) => res.send(`<h1> Executando na porta: ${port} </h1>`));
 
 app.post('/user', async (req, res) => {
 
@@ -23,7 +23,7 @@ app.get('/user', async (req, res) => {
 
   const user = await User.findAll();
 
-  return res.status(201).json(user);
+  return res.status(201).send(user);
 });
 
 app.listen(port, () => console.log(`Servidor online na porta ${port}`));
