@@ -21,6 +21,7 @@ app.post('/user', async (req, res) => {
 
 app.get('/', cors(), async (req, res) => {
 
+  
   const user = await User.findAll();
 
   return res.status(201).json(user);
