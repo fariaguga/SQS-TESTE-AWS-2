@@ -6,8 +6,7 @@ const { User } = require('./models')
 const app = express()
 const port = process.env.PORT || 3000
 
-// app.use(express.json());
-app.use(cors());
+app.use(bodyParser.json());
 
 // app.get('/', (req, res) => res.send(`<h1> Executando na porta: ${port} </h1>`));
 
@@ -20,7 +19,7 @@ app.post('/user', async (req, res) => {
   return res.status(201).json(user);
 });
 
-app.get('/', async (req, res) => {
+app.get('/', cors(), async (req, res) => {
 
   const user = await User.findAll();
 
