@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 // app.get('/', (req, res) => res.send(`<h1> Executando na porta: ${port} </h1>`));
 
 
-app.post('/user', async (req, res) => {
+app.post('/user', cors({ origin: "https://arabela-banda.herokuapp.com"}), async (req, res) => {
 
   const { name, email, wpp, music } = req.body;
 
