@@ -17,4 +17,11 @@ app.post('/user', async (req, res) => {
   return res.status(201).json(user);
 });
 
+app.get('/user', async (req, res) => {
+
+  const user = await User.findAll();
+
+  return res.status(201).json(user);
+});
+
 app.listen(port, () => console.log(`Servidor online na porta ${port}`));
