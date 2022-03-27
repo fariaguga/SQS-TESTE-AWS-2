@@ -32,6 +32,7 @@ app.get('/', async (req, res) => {
 
   const user = await User.findAll();
 
+  
   return res.status(201).json(user);
 });
 
