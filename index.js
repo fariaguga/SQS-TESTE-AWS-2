@@ -6,8 +6,12 @@ const { User } = require('./models')
 const app = express()
 const port = process.env.PORT || 3000
 
-app.use(bodyParser.json());
-
+app.use(bodyParser.json(), res.header("Acess-Control-Allow-Origin", "*"));
+app.use(bodyParser.json(), function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+  });
 // app.get('/', (req, res) => res.send(`<h1> Executando na porta: ${port} </h1>`));
 
 
