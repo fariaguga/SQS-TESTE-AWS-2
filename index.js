@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const { User } = require('./models')
 
@@ -6,7 +7,7 @@ const app = express()
 const port = process.env.PORT || 3000
 
 // app.use(express.json());
-app.use(bodyParser.json());
+app.use(bodyParser.json(), cors());
 
 // app.get('/', (req, res) => res.send(`<h1> Executando na porta: ${port} </h1>`));
 
@@ -23,7 +24,7 @@ app.get('/', async (req, res) => {
 
   const user = await User.findAll();
 
-  return res.status(201).send(user);
+  return res.status(201).json(user);
 });
 
 app.listen(port, () => console.log(`Servidor online na porta ${port}`));
