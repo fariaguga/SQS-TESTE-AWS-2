@@ -8,6 +8,8 @@ const port = process.env.PORT || 3000
 // app.use(express.json());
 app.use(bodyParser.json());
 
+app.get('/', (req, res) => res.send(`<h1> Executando na porta: ${port} </h1>`));
+
 app.post('/user', async (req, res) => {
 
   const { name, email, wpp, music } = req.body;
