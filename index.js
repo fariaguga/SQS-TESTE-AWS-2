@@ -10,9 +10,9 @@ app.use(bodyParser.json());
 
 app.post('/user', async (req, res) => {
 
-  const { name, description } = req.body;
+  const { name, email, wpp, music } = req.body;
 
-  const user = await User.create({ name, description });
+  const user = await User.create({ name, email, wpp, music });
 
   return res.status(201).json(user);
 });
