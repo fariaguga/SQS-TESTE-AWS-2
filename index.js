@@ -19,7 +19,7 @@ app.post('/user', async (req, res) => {
   return res.status(201).json(user);
 });
 
-app.get('/user', async (req, res) => {
+app.get('/', async (req, res) => {
 
   const user = await User.findAll();
 
