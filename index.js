@@ -7,7 +7,7 @@ const app = express()
 const port = process.env.PORT || 3000
 
 // app.use(express.json());
-app.use(bodyParser.json(), cors());
+app.use(cors());
 
 // app.get('/', (req, res) => res.send(`<h1> Executando na porta: ${port} </h1>`));
 
