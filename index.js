@@ -10,13 +10,8 @@ app.use(bodyParser.json());
 
 // app.get('/', (req, res) => res.send(`<h1> Executando na porta: ${port} </h1>`));
 
-app.all('/user', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  next()
-});
 
-app.post('/user', cors(/*{ origin: "https://arabela-banda.herokuapp.com/"}*/), async (req, res) => {
+app.post('/user', async (req, res) => {
 
   const { name, email, wpp, music } = req.body;
 
