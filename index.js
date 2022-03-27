@@ -12,11 +12,13 @@ app.use(function(req, res, next) {
   next();
   });
 
-  app.use(bodyParser.json
+  app.use(bodyParser.json());
+  app.use(cors());
+
 // app.get('/', (req, res) => res.send(`<h1> Executando na porta: ${port} </h1>`));
 
 
-app.post('/user', cors(), async (req, res) => {
+app.post('/user', async (req, res) => {
 
   const { name, email, wpp, music } = req.body;
 
@@ -25,7 +27,7 @@ app.post('/user', cors(), async (req, res) => {
   return res.status(201).json(user);
 });
 
-app.get('/', cors(), async (req, res) => {
+app.get('/', async (req, res) => {
 
 
   const user = await User.findAll();
