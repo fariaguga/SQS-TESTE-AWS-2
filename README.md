@@ -18,7 +18,7 @@ Repository Frontend: https://github.com/fariaguga/arabela
 
 
 ## :man: Lista de usuários e músicas rodando na porta :3000
-<img src="src/img/Backend.png" width="500px"/>
+<img src="img/Backend.png" width="500px"/>
 
 ## :no_good_man: Adicionar Formulário | http://localhost:3000/user
-<img src="src/img/Forms-a.png" width="500px"/>
+<img src="img/Forms-a.png" width="500px"/>
