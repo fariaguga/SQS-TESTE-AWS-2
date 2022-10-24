@@ -6,6 +6,11 @@
   "scripts": {
     "start": "node index,js",
     "dev": "nodemon index.js",
+    "create_db": "npx sequelize db:create",
+    "migrate": "npx sequelize db:migrate",
+    "migrate_undo": "npx sequelize db:migrate:undo",
+    "seeder": "npx sequelize db:seed:all",
+    "seeder_undo": "npx sequelize db:seed:undo:all",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

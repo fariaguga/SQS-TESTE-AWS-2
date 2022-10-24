@@ -3,10 +3,10 @@ module.exports = {
     await queryInterface.bulkInsert('Users',
       [{
         id: 1,
-        name: 'Gustavo Faria',
-        email: 'fariaguga@hotmail.com',
-        wpp: '15991274518',
-        music: 'É só chegar',
+        vehicle: 'ford',
+        model: 'fiesta',
+        location: 'fef54#54f5e4',
+        time: '08:35AM',
       },
       ], { timestamps: false });
   },

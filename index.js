@@ -20,9 +20,9 @@ app.use(function(req, res, next) {
 
 app.post('/user', async (req, res) => {
 
-  const { name, email, wpp, music } = req.body;
+  const { vehicle, model, location, time } = req.body;
 
-  const user = await User.create({ name, email, wpp, music });
+  const user = await User.create({ vehicle, model, location, time });
 
   return res.status(201).json(user);
 });

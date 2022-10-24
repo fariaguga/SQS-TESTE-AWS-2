@@ -9,26 +9,26 @@ const Attributes = {
     // field: 'id',
   },
 
-  name: {
+  vehicle: {
     type: DataTypes.STRING,
     // allowNull: false,
     // field: 'display_name',
   },
 
-  email: {
+  model: {
     type: DataTypes.STRING,
     unique: true,
     // allowNull: false,
     // field: 'email',
   },
 
-  wpp: {
+  location: {
     type: DataTypes.STRING,
     // allowNull: false,
     // field: 'password',
   },
 
-  music: {
+  time: {
     type: DataTypes.STRING,
     // allowNull: false,
     // field: 'image',

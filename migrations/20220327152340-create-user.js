@@ -10,23 +10,23 @@ module.exports = {
         autoIncrement: true,
       },
 
-      name: {
+      vehicle: {
         type:Sequelize.STRING,
         allowNull: false,
       },
 
-      email: {
+      model: {
         type:Sequelize.STRING,
         unique: true,
         allowNull: false,
       },
 
-      wpp: {
+      location: {
         type:Sequelize.STRING,
         allowNull: false,
       },
 
-      music: {
+      time: {
         type:Sequelize.STRING,
         allowNull: false,
       },
