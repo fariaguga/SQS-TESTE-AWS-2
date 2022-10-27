@@ -7,7 +7,7 @@ var sqs = new AWS.SQS({apiVersion: '2012-11-05'});
 const addUserService = async (vehicle, model, location, time) => {
 
     //  const user = await User.create({ vehicle, model, location, time });
-  const user = `INSERT INTO "Users" ("id","vehicle","model","location","time") VALUES (DEFAULT,${vehicle},${model},${location},${time});`
+  const user = `INSERT INTO public."Users" (vehicle,model,location,time) VALUES ('${vehicle}','${model}','${location}','${time}');`
 
   var params = {
     // Remove DelaySeconds parameter and value for FIFO queues
@@ -19,17 +19,17 @@ const addUserService = async (vehicle, model, location, time) => {
      },
      "Author": {
        DataType: "String",
-       StringValue: "John Grisham"
+       StringValue: "cszcsz"
      },
      "WeeksOn": {
        DataType: "Number",
-       StringValue: "6"
+       StringValue: "77"
      }
    },
    MessageBody: user,
-   MessageDeduplicationId: "TheWhistler",  // Required for FIFO queues
-   MessageGroupId: "1",  // Required for FIFO queues
-   QueueUrl: "https://sqs.us-east-2.amazonaws.com/458246424339/stc-teste-sqs.fifo"
+   MessageDeduplicationId: `${location}`,  // Required for FIFO queues
+   MessageGroupId: "2",  // Required for FIFO queues
+   QueueUrl: "https://sqs.us-east-2.amazonaws.com/458246424339/teste-1.fifo"
  };
 
  sqs.sendMessage(params, function(err, data) {
