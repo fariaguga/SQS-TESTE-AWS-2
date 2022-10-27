@@ -6,14 +6,14 @@ const addUserController = async (req, res) => {
         
         const { vehicle, model, location, time } = req.body;
 
-        const { code, message } = await userService.addUserService(
+        const { code, user } = await userService.addUserService(
             vehicle,
             model,
             location,
             time,
             );
-        if (message) return res.status(code).json({ message });
-        return res.status(code).json({ message });
+        if (user) return res.status(code).json({ user });
+        return res.status(code).json({ user });
     } catch (error) {
         return console.error(error);
     }

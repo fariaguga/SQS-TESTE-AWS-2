@@ -11,7 +11,7 @@ const addUserService = async (vehicle, model, location, time) => {
 
   var params = {
     // Remove DelaySeconds parameter and value for FIFO queues
-   DelaySeconds: 10,
+   // DelaySeconds: 10,
    MessageAttributes: {
      "Title": {
        DataType: "String",
@@ -27,9 +27,9 @@ const addUserService = async (vehicle, model, location, time) => {
      }
    },
    MessageBody: user,
-   // MessageDeduplicationId: "TheWhistler",  // Required for FIFO queues
-   // MessageGroupId: "Group1",  // Required for FIFO queues
-   QueueUrl: "https://sqs.us-east-2.amazonaws.com/458246424339/stc-teste-sqs"
+   MessageDeduplicationId: "TheWhistler",  // Required for FIFO queues
+   MessageGroupId: "1",  // Required for FIFO queues
+   QueueUrl: "https://sqs.us-east-2.amazonaws.com/458246424339/stc-teste-sqs.fifo"
  };
 
  sqs.sendMessage(params, function(err, data) {
